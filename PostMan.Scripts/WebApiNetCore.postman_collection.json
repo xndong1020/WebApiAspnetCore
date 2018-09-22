@@ -1,0 +1,176 @@
+{
+	"id": "6b42505f-97db-85c0-d2bb-8398ecaa6ad6",
+	"name": "WebApiNetCore",
+	"description": "",
+	"order": [
+		"06e601c6-64ee-175b-f576-97a679583cba",
+		"240a20d6-05a6-8529-9447-a39d4926508b",
+		"0bd2e7fa-9109-a643-bac3-90a0361ef6a0",
+		"b932fc64-6a0a-a78b-01d9-3cf6205a6b5b",
+		"a31c15fb-fd91-3ff6-db47-f0bb47c44b5a"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1537630203471,
+	"owner": "2140657",
+	"public": false,
+	"requests": [
+		{
+			"id": "06e601c6-64ee-175b-f576-97a679583cba",
+			"headers": "Accept: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{Server}}/api/department/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "6b42505f-97db-85c0-d2bb-8398ecaa6ad6",
+			"data": null,
+			"dataMode": "params",
+			"name": "GetDepartment",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1537630204817,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "0bd2e7fa-9109-a643-bac3-90a0361ef6a0",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{Server}}/api/department/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "6b42505f-97db-85c0-d2bb-8398ecaa6ad6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "CreateDepartment",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1537630729674,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"DepartmentName\": \"New Dept\",\n\t\"Location\": \"Beijing\",\n\t\"DepartmentHead\": \"Nicole Dong\"\n}"
+		},
+		{
+			"id": "240a20d6-05a6-8529-9447-a39d4926508b",
+			"headers": "Accept: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{Server}}/api/department/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "6b42505f-97db-85c0-d2bb-8398ecaa6ad6",
+			"data": null,
+			"dataMode": "params",
+			"name": "GetDepartments",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1537630222806,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "a31c15fb-fd91-3ff6-db47-f0bb47c44b5a",
+			"headers": "",
+			"headerData": [],
+			"url": "{{Server}}/api/department/10",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "6b42505f-97db-85c0-d2bb-8398ecaa6ad6",
+			"data": null,
+			"dataMode": "params",
+			"name": "DeleteDepartment",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1537630934133,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b932fc64-6a0a-a78b-01d9-3cf6205a6b5b",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{Server}}/api/department/10",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "6b42505f-97db-85c0-d2bb-8398ecaa6ad6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "UpdateDepartment",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1537630901942,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"Id\": 10,\n\t\"DepartmentName\": \"New Dept\",\n\t\"Location\": \"Beijing\",\n\t\"DepartmentHead\": \"Nicole Wang\"\n}"
+		}
+	]
+}
