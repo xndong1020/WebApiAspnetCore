@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebApiNetCore.Entities;
 using WebApiNetCore.Services;
+using WebApiNetCore.Web.Dtos;
 
 namespace WebApiNetCore.Web.Controllers
 {
@@ -11,35 +13,42 @@ namespace WebApiNetCore.Web.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _service;
+        private readonly IMapper _mapper;
 
-        public DepartmentController(IDepartmentService service)
+        public DepartmentController(IDepartmentService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Department>> GetAll()
+        public ActionResult<IEnumerable<DepartmentDto>> GetAll()
         {
-            return _service.GetDepartments().ToList();
+            var departments =  _service.GetDepartments().ToList();
+            var result = _mapper.Map<IEnumerable<DepartmentDto>>(departments).ToList();
+            return result;
         }
 
 
         [HttpGet("{id}", Name = "GetDepartment")]
-        public ActionResult<Department> Get(int id)
+        public ActionResult<DepartmentDto> Get(int id)
         {
-            return _service.GetDepartment(id, "Employees");
+            var department = _service.GetDepartment(id, "Employees"); 
+            return _mapper.Map<DepartmentDto>(department);
         }
 
         [HttpPost]
-        public ActionResult Post(Department department)
+        public ActionResult Post(DepartmentDto departmentDto)
         {
+            var department = _mapper.Map<Department>(departmentDto);
             var id = _service.InsertDepartment(department);
             return Created("/api/Department/" + id, department);
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, Department department)
+        public ActionResult Put(int id, DepartmentDto departmentDto)
         {
+            var department = _mapper.Map<Department>(departmentDto);
             _service.UpdateDepartment(department);
             return NoContent();
         }
